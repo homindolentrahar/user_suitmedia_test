@@ -8,7 +8,7 @@ part 'user_dto.g.dart';
 @freezed
 class UserDto with _$UserDto {
   factory UserDto({
-    required String id,
+    required int id,
     required String first_name,
     required String last_name,
     required String email,

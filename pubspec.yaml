@@ -41,12 +41,11 @@ dependencies:
   freezed_annotation: ^2.0.3
   #  Net
   http: ^0.13.4
+  dio: ^4.0.6
   #  Util
-  intl: ^0.17.0
-  uuid: ^3.0.6
+  flutter_spinkit: ^5.1.0
   flutter_svg: ^1.1.1+1
   json_serializable: ^6.2.0
-
 
 dev_dependencies:
   flutter_test:

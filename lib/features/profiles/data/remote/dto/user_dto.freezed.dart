@@ -20,7 +20,7 @@ UserDto _$UserDtoFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$UserDto {
-  String get id => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
   String get first_name => throw _privateConstructorUsedError;
   String get last_name => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
@@ -36,7 +36,7 @@ abstract class $UserDtoCopyWith<$Res> {
   factory $UserDtoCopyWith(UserDto value, $Res Function(UserDto) then) =
       _$UserDtoCopyWithImpl<$Res>;
   $Res call(
-      {String id,
+      {int id,
       String first_name,
       String last_name,
       String email,
@@ -63,7 +63,7 @@ class _$UserDtoCopyWithImpl<$Res> implements $UserDtoCopyWith<$Res> {
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       first_name: first_name == freezed
           ? _value.first_name
           : first_name // ignore: cast_nullable_to_non_nullable
@@ -91,7 +91,7 @@ abstract class _$$_UserDtoCopyWith<$Res> implements $UserDtoCopyWith<$Res> {
       __$$_UserDtoCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String id,
+      {int id,
       String first_name,
       String last_name,
       String email,
@@ -119,7 +119,7 @@ class __$$_UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       first_name: first_name == freezed
           ? _value.first_name
           : first_name // ignore: cast_nullable_to_non_nullable
@@ -155,7 +155,7 @@ class _$_UserDto extends _UserDto {
       _$$_UserDtoFromJson(json);
 
   @override
-  final String id;
+  final int id;
   @override
   final String first_name;
   @override
@@ -206,7 +206,7 @@ class _$_UserDto extends _UserDto {
 
 abstract class _UserDto extends UserDto {
   factory _UserDto(
-      {required final String id,
+      {required final int id,
       required final String first_name,
       required final String last_name,
       required final String email,
@@ -216,7 +216,7 @@ abstract class _UserDto extends UserDto {
   factory _UserDto.fromJson(Map<String, dynamic> json) = _$_UserDto.fromJson;
 
   @override
-  String get id;
+  int get id;
   @override
   String get first_name;
   @override

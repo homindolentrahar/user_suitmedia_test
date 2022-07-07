@@ -233,7 +233,7 @@ class _FirstScreenState extends State<FirstScreen> {
                               builder: (_) => SecondScreen(name: name),
                             ),
                           );
-                        } else {}
+                        }
                       },
                     ),
                   ],

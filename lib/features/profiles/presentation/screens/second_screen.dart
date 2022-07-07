@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:user_suitmedia_test/di/app_module.dart';
+import 'package:user_suitmedia_test/features/profiles/domain/repository/i_user_repository.dart';
+import 'package:user_suitmedia_test/features/profiles/presentation/application/users_watcher.dart';
+import 'package:user_suitmedia_test/features/profiles/presentation/screens/third_screen.dart';
 
 class SecondScreen extends StatefulWidget {
   static const route = "/second";
@@ -12,6 +17,8 @@ class SecondScreen extends StatefulWidget {
 }
 
 class _SecondScreenState extends State<SecondScreen> {
+  String _text = "Choose a User";
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -19,6 +26,7 @@ class _SecondScreenState extends State<SecondScreen> {
         backgroundColor: Colors.black12,
         appBar: AppBar(
           backgroundColor: Colors.black12,
+          centerTitle: true,
           title: const Text(
             "Second Screen",
             style: TextStyle(
@@ -41,7 +49,28 @@ class _SecondScreenState extends State<SecondScreen> {
               fontWeight: FontWeight.bold,
             ),
           ),
-          onPressed: () {},
+          onPressed: () async {
+            final result = await Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => BlocProvider.value(
+                  value: UserWatcher(injector.get<IUserRepository>()),
+                  child: const ThirdScreen(),
+                ),
+              ),
+            );
+
+            if (!mounted) {
+              return;
+            }
+
+            setState(() {
+              if (result != null) {
+                _text = result.toString();
+              } else {
+                _text = "Choose a User";
+              }
+            });
+          },
         ),
         body: Padding(
           padding: const EdgeInsets.symmetric(
@@ -68,11 +97,11 @@ class _SecondScreenState extends State<SecondScreen> {
                 ),
               ),
               const SizedBox(height: 16),
-              const Expanded(
+              Expanded(
                 child: Center(
                   child: Text(
-                    "Selected User Name",
-                    style: TextStyle(
+                    _text,
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 24,
                       fontWeight: FontWeight.bold,

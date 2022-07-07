@@ -7,7 +7,7 @@ part of 'user_dto.dart';
 // **************************************************************************
 
 _$_UserDto _$$_UserDtoFromJson(Map<String, dynamic> json) => _$_UserDto(
-      id: json['id'] as String,
+      id: json['id'] as int,
       first_name: json['first_name'] as String,
       last_name: json['last_name'] as String,
       email: json['email'] as String,
