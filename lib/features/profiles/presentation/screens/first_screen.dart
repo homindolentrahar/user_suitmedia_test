@@ -54,7 +54,7 @@ class _FirstScreenState extends State<FirstScreen> {
                       keyboardType: TextInputType.name,
                       validator: (value) {
                         if (value!.isEmpty) {
-                          return "Palindrome cannot be empty!";
+                          return "Name cannot be empty!";
                         }
                         return null;
                       },
